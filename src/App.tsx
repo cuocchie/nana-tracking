@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Auth from './components/Auth.tsx';
 import Calendar from './components/Calendar.tsx';
-import RemainingDays from './components/RemainingDays.tsx';
+// import RemainingDays from './components/RemainingDays.tsx';
 import { readSheetData } from './google-sheets/googleSheetsApi.ts'; // Import read function and update path
 import './App.css';
 import Lottie from 'lottie-react'; // Import Lottie
@@ -11,7 +11,6 @@ import weightImage2 from './assets/rand-pose/weight_2.png';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-  const [workoutData, setWorkoutData] = useState<string[][] | null>(null); // State to store data from Google Sheet
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -29,8 +28,6 @@ function App() {
     try {
       // Assuming your sheet has Date in column A and Status (Practiced/Planned) in column B
       const data: string[][] | null | undefined = await readSheetData('Sheet1!A:B'); // Read data from Sheet1, columns A and B
-      setWorkoutData(data || null); // Set workoutData to data or null
-
       // Process data to extract practiced and planned days (assuming data format)
       const practiced: string[] = [];
       const planned: string[] = [];
