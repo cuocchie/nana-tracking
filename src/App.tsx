@@ -72,7 +72,7 @@ function App() {
           {!loading && !error && (
             <>
               <div className="practiced-days-card"> {/* Card container */}
-                <p className="practiced-days-text">Practiced Days: <span className="practiced-days-count">{practicedDays.length}</span>/40
+                <p className="practiced-days-text">Ngày em đã tập: <span className="practiced-days-count">{practicedDays.length}</span>/40
                   <Lottie animationData={animationData} style={{ height: 20, width: 20, display: 'inline-block' }} />
                 </p> {/* Display practiced days with Lottie animation */}
               </div>

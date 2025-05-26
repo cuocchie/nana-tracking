@@ -11,7 +11,7 @@ function Auth({ onLogin }: { onLogin: () => void }) {
   const handleLogin = () => {
     console.log('Auth component handleLogin called');
     // Hardcoded authentication
-    if (username === 'user' && password === '179201') {
+    if (username === 'nana' && password === '179201') {
       console.log('Auth component: Login successful! Calling onLogin...');
       onLogin();
     } else {
@@ -31,6 +31,7 @@ function Auth({ onLogin }: { onLogin: () => void }) {
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         className="auth-input"
+        autoCapitalize="none"
       />
       <input
         type="password"
@@ -38,6 +39,7 @@ function Auth({ onLogin }: { onLogin: () => void }) {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         className="auth-input"
+        autoCapitalize="none"
       />
       <button onClick={handleLogin} className="auth-button">Login</button>
     </div>
