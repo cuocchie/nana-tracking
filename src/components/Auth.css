@@ -55,6 +55,12 @@
   font-size: 0.9em;
 }
 
+.hint-message {
+  color: #add8e6; /* Light blue */
+  margin-top: 10px;
+  font-size: 0.8em;
+}
+
 .auth-image {
   max-width: 150px; /* Adjust as needed */
   height: auto;

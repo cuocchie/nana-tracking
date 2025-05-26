@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import './Auth.css'; // Import the new CSS file for Auth component
 import strivingPoseImage from '../assets/striving_pose.png'; // Import the image
 
@@ -6,15 +6,17 @@ function Auth({ onLogin }: { onLogin: () => void }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [hint, setHint] = useState('');
 
   const handleLogin = () => {
     console.log('Auth component handleLogin called');
     // Hardcoded authentication
-    if (username === 'user' && password === 'password') {
+    if (username === 'user' && password === '179201') {
       console.log('Auth component: Login successful! Calling onLogin...');
       onLogin();
     } else {
-      setError('Invalid username or password');
+      setError('Sai password ròi, em nhớ pass chung của chúng mình ko?');
+      setHint('abx'); // Clear any previous hint
     }
   };
 
@@ -22,7 +24,7 @@ function Auth({ onLogin }: { onLogin: () => void }) {
     <div className="auth-container">
       <h2>Login</h2>
       <img src={strivingPoseImage} alt="Striving Pose" className="auth-image" /> {/* Add the image */}
-      {error && <p className="error-message">{error}</p>}
+      {error ? (<p className="error-message">{error}</p>) : (hint ? <p className="hint-message">{hint}</p> : null)}
       <input
         type="text"
         placeholder="Username"
