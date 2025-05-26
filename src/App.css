@@ -1,0 +1,157 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+/* Practiced Days Card */
+.practiced-days-card {
+  background-color: #ffffff; /* White background for the card */
+  padding: 20px;
+  border-radius: 15px; /* Curved borders */
+  margin: 20px auto; /* Center the card and add space */
+  max-width: 300px; /* Limit card width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.practiced-days-text {
+  font-size: 1.5em; /* Make text bigger */
+  font-weight: bold; /* Similar to Duolingo font style */
+  color: #333; /* Dark text color for readability */
+  margin-right: 0.2em; /* Add some space to the right of the text */
+}
+
+/* Fire-like gradient animation for practiced days count */
+.practiced-days-count {
+  background: linear-gradient(to bottom, #ff9900, #ff3300, #ffff00); /* Fire-like gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fireGradient 5s linear infinite;
+}
+
+@keyframes fireGradient {
+  0% { background-position: 0%; }
+  100% { background-position: 100%; }
+}
+
+/* Calendar Styles */
+.calendar-container {
+  margin: 20px auto;
+  max-width: 300px; /* Adjust as needed for mobile view */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-container h2 {
+  text-align: center;
+  color: #dc7777; /* Light pink pastel */
+  margin-bottom: 15px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 days a week */
+  gap: 5px;
+  text-align: center;
+}
+
+.day-of-week-header {
+  font-weight: bold;
+  color: #555; /* Darker color for headers */
+  padding: 5px;
+}
+
+.calendar-day {
+  padding: 10px 5px;
+  border-radius: 5px;
+  background-color: #f0f8ff; /* Light blue pastel */
+  color: #333;
+  cursor: pointer;
+  position: relative; /* For absolute positioning of emoji */
+}
+
+.practiced-emoji {
+  position: absolute;
+  top: -15px;
+  right: -8px;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 2px rgba(90, 89, 89, 0.3); 
+}
+
+.calendar-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar-nav-button {
+  background-color: #e6e6fa; /* Light pink pastel */
+  color: #333;
+  padding: 3px 8px; /* Reduced padding to make smaller */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em; /* Slightly smaller font size */
+  /* Removed horizontal margin here */
+}
+
+.calendar-nav-button:hover {
+  background-color: #d8bfd8; /* Slightly darker pink on hover */
+}
+
+.calendar-day.empty {
+  background-color: transparent;
+  cursor: default;
+}
+
+.calendar-day.practiced {
+  background-color: #ffb6c1; /* Light pink pastel for practiced days */
+  color: #333;
+  font-weight: bold;
+}
+
+.calendar-day.planned {
+  background-color: #98fb98; /* Pale green for planned days */
+  color: #333;
+}
